@@ -21,31 +21,32 @@
 //      (or event.preventDefault() depending on the name of the variable) to prevent the page
 //      from refreshing when a form is submitted. Do all your checks after that line.
 
-function validateForm(e){
-  e.preventDefault()
-  let name = document.querySelector('#name').value
-  let email =document.querySelector('#email').value
-  let password = document.querySelector('#password').value
-  let regex = /@/
-  
-  
-        if (name === '') {
-          alert('Please enter your name')
-          return false
-        } else if (regex.test(email) == false) {
-          alert('Please enter a valid email')
-            return false
-          } else if (password == '') {
-            alert('Please enter your password')
-            return false
-          } else if (password.length < 8) {
-            alert('Password needs to be at least 8 characters long')
-            return false
-          } else {
-            return true
-          }
+function validateForm(e) {
+	e.preventDefault();
+	let name = document.querySelector('#name').value;
+	let email = document.querySelector('#email').value;
+	let password = document.querySelector('#password').value;
+	let regex = /@/;
 
-        }
+	if (name === '') {
+		alert('Please enter your name');
+		return false;
+	}
+	if (regex.test(email) == false) {
+		alert('Please enter a valid email');
+		return false;
+	}
+	if (password == '') {
+		alert('Please enter your password');
+		return false;
+	}
+	if (password.length < 8) {
+		alert('Password needs to be at least 8 characters long');
+		return false;
+	} else {
+		return true;
+	}
+}
 
-let userForm = document.querySelector('#userForm')
-userForm.addEventListener('submit', validateForm)
+let userForm = document.querySelector('#userForm');
+userForm.addEventListener('submit', validateForm);
